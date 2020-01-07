@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    div(class="jumbotron")
+        h4(class="text-center") Welcome to E-Biashara Customer Support
+    div(class="container")
+        div(class="row")
+            div(class="col-5 col-md-5 offset-md-2")
+                //- each error, i in errors
+                   span check your form again #{error['msg']}
+                #{errors}
+                if errors
+                 span.text-danger collect form mistakes
+                if msg
+                    div.alert.alert-success
+                        strong Thankyou for your comment
+                        
+                        
+                div.card
+                    div.card-header
+                        h5.card-title Contact Us
+                    div.card-block.card-body
+
+                        form(name="comment", method="post")
+                            div.form-group
+                                span.label First Name 
+                                input(type="text", name="first_name"  class="form-control")
+                            div.form-group
+                                span.label Phone (starts with +254)
+                                input(type="text", name="phone"  class="form-control")
+                            div.form-group
+                                span.label Comments
+                                textarea(name="comments", cols="40", rows="5" class="form-control")
+                            div.actions.mt-4
+                                input(type="submit", value="submit" class="btn btn-block btn-info")
+                             
+                        
+       
+
